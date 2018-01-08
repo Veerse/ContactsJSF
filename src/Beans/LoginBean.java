@@ -1,4 +1,4 @@
-package Control;
+package Beans;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -6,14 +6,19 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import java.io.Serializable;
 
-@ManagedBean(name="control")
+@ManagedBean(name="login")
 @SessionScoped
 
-public class ControlAcces implements Serializable{
+public class LoginBean implements Serializable{
 
     private static final long serialVersionUID = 455659950717243336L;
     private String login;
     private String password;
+
+    public LoginBean(){
+        login = "root";
+        password = "root";
+    }
 
     public String getLogin() {
         return login;
@@ -39,7 +44,10 @@ public class ControlAcces implements Serializable{
         if(!password.equals("root")) context.addMessage(null, new FacesMessage("Wrong password"));
 
         if(context.getMessageList().size()>0) return(null);
-        else return("missing");
+        else{
+            System.out.println("Logged as " + login);
+            return("main");
+        }
 
     }
 

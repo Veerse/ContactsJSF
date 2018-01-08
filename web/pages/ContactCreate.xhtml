@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+
+    <h:outputLabel value="Contact creation"/>
+
+    <h:form>
+        <h:messages/>
+        <!-- Contact infos -->
+        firstName : <h:inputText value="#{contact.firstName}"/> <br/>
+        lastName : <h:inputText value="#{contact.lastName}"/> <br/>
+        email : <h:inputText value="#{contact.email}"/><br/>
+
+        <!-- Adress -->
+
+
+        <!-- Phones -->
+        Phone kind : <h:inputText value="#{phone.phoneKind}"/> <br/>
+        Phone number : <h:inputText value="#{phone.phoneNumber}"/><br/>
+
+        <h:commandButton value="Login" action="#{contact.Create}"/><br/>
+    </h:form>
+
+</f:view>
+</html>

@@ -9,6 +9,7 @@
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Mojarra-2.2.1" />
+          <element id="library" level="project" name="BootsFaces-OSP-1.2.0-dist" />
         </element>
       </element>
     </root>

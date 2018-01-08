@@ -21,5 +21,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="Tomcat 8.0.46" level="application_server_libraries" />
     <orderEntry type="library" exported="" name="Mojarra-2.2.1" level="project" />
+    <orderEntry type="library" name="BootsFaces-OSP-1.2.0-dist" level="project" />
   </component>
 </module>

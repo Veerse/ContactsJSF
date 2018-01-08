@@ -4,14 +4,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
    <f:view>
+
        <h:outputLabel value="Please, log in to proceed"/>
-       <h:messages/>
+
        <h:form>
-           Login : <h:inputText value="#{control.login}"/> <br/>
-           Password : <h:inputText value="#{control.password}"/> <br/>
-           <h:commandButton value="Login" action="#{control.checkAcces}"/><br/>
+           <h:messages/>
+           Login : <h:inputText value="#{login.login}"/> <br/>
+           Password : <h:inputText value="#{login.password}"/> <br/>
+           <h:commandButton value="Login" action="#{login.checkAcces}"/><br/>
        </h:form>
+
    </f:view>
 </html>

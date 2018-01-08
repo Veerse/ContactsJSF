@@ -6,6 +6,9 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
-    <h:outputLabel value="something is missing!"/>
+    <h:outputLabel value="welcome to the main page"/>
+    <h:commandButton value="Go to Page B" action="page-b"/>
+    <h:link value="Create contacts" outcome="ContactCreate"/>
+    <h:outputText value="#{login.login}"/>
 </f:view>
 </html>
