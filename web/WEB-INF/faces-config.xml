@@ -4,21 +4,4 @@
     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
     http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
 
-    <managed-bean>
-        <managed-bean-name>phone</managed-bean-name>
-        <managed-bean-class>Beans.PhoneBean</managed-bean-class>
-        <managed-bean-scope>request</managed-bean-scope>
-    </managed-bean>
-
-    <managed-bean>
-        <managed-bean-name>contact</managed-bean-name>
-        <managed-bean-class>Beans.ContactBean</managed-bean-class>
-        <managed-bean-scope>request</managed-bean-scope>
-        <managed-property>
-            <property-name>phone</property-name>
-            <property-class>Beans.PhoneBean</property-class>
-            <value>#{phone}</value>
-        </managed-property>
-    </managed-bean>
-
 </faces-config>

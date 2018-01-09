@@ -3,25 +3,18 @@ package Beans;
 
 import Model.Address;
 import Model.Contact;
+import Model.Phone;
 import Services.implementations.ContactServices;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.ViewScoped;
 import java.util.ArrayList;
 import java.util.List;
 
 @ManagedBean(name="contact")
-
+@ViewScoped
 public class ContactBean {
-
-    @ManagedProperty(value="#{phone}")
-    private PhoneBean phone;
-
-    public void setPhone(PhoneBean phone) { this.phone = phone; }
-
-    public PhoneBean getPhone() { return phone; }
-
-
 
     ContactServices c_s;
 
@@ -32,9 +25,12 @@ public class ContactBean {
     private String lastName;
     private String email;
     private List<Address> addresses;
+    private List<Phone> phones;
 
     public ContactBean() {
         contacts = new ArrayList<Contact>();
+        phones = new ArrayList<Phone>();
+        addresses = new ArrayList<Address>();
 
         c_s = new ContactServices();
 
@@ -63,15 +59,35 @@ public class ContactBean {
 
     public void setAddresses(List<Address> addresses) { this.addresses = addresses; }
 
+    public List<Phone> getPhones() { return phones; }
+
+    public void setPhones(List<Phone> phones) { this.phones = phones; }
+
 
     // METHODS
 
     public String Create () {
         //Contact c = new Contact (firstName, lastName, email, addresses);
-        System.out.println("dedans" + phone.getPhoneNumber());
-        
+        System.out.println("creation de " + firstName + " avec les numeros " + phones.get(0).getPhoneKind() + " " + phones.get(0).getPhoneNumber());
         return null;
     }
 
+    // AJAX METHODS
+
+    public void addPhone() { phones.add(new Phone()); }
+
+    public void removePhone(Phone item) {
+        phones.remove(item);
+    }
+
+    public void addAddress() { addresses.add(new Address()); }
+
+    public void removeAddress(Address item) {
+        addresses.remove(item);
+    }
+
+    public void save() {
+        System.out.println("items: " + phones);
+    }
 
 }

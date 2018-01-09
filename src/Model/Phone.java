@@ -6,18 +6,11 @@ public class Phone {
     private String phoneKind;
     private String phoneNumber;
 
-    public Phone(String phoneKind, String phoneNumber) {
-        this.phoneKind = phoneKind;
-        this.phoneNumber = phoneNumber;
-    }
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    public int getId() { return id; }
+
+    public void setId(int id) { this.id = id; }
 
     public String getPhoneKind() {
         return phoneKind;
@@ -27,9 +20,7 @@ public class Phone {
         this.phoneKind = phoneKind;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
+    public String getPhoneNumber() { return phoneNumber; }
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
