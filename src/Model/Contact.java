@@ -1,5 +1,6 @@
 package Model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Contact {
@@ -8,10 +9,11 @@ public class Contact {
     private String firstName;
     private String lastName;
     private String email;
-    private List<Address> addresses;
-    private List<Phone> phones;
+    private ArrayList<Address> addresses;
+    private ArrayList<Phone> phones;
 
-    public Contact(String firstName, String lastName, String email, List<Address> addresses, List<Phone> phones) {
+    public Contact(int id, String firstName, String lastName, String email, ArrayList<Address> addresses, ArrayList<Phone> phones) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -35,11 +37,11 @@ public class Contact {
 
     public void setEmail(String email) { this.email = email; }
 
-    public List<Address> getAddresses() { return addresses; }
+    public ArrayList<Address> getAddresses() { return addresses; }
 
-    public void setAddresses(List<Address> addresses) { this.addresses = addresses; }
+    public void setAddresses(ArrayList<Address> addresses) { this.addresses = addresses; }
 
-    public List<Phone> getPhones() { return phones; }
+    public ArrayList<Phone> getPhones() { return phones; }
 
-    public void setPhones(List<Phone> phones) { this.phones = phones; }
+    public void setPhones(ArrayList<Phone> phones) { this.phones = phones; }
 }

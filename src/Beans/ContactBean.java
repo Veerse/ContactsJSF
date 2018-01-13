@@ -9,6 +9,8 @@ import Services.implementations.ContactServices;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
+import java.sql.Array;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,8 +26,8 @@ public class ContactBean {
     private String firstName;
     private String lastName;
     private String email;
-    private List<Address> addresses;
-    private List<Phone> phones;
+    private ArrayList<Address> addresses;
+    private ArrayList<Phone> phones;
 
     public ContactBean() {
         contacts = new ArrayList<Contact>();
@@ -55,20 +57,21 @@ public class ContactBean {
 
     public void setEmail(String email) { this.email = email; }
 
-    public List<Address> getAddresses() { return addresses; }
+    public ArrayList<Address> getAddresses() { return addresses; }
 
-    public void setAddresses(List<Address> addresses) { this.addresses = addresses; }
+    public void setAddresses(ArrayList<Address> addresses) { this.addresses = addresses; }
 
-    public List<Phone> getPhones() { return phones; }
+    public ArrayList<Phone> getPhones() { return phones; }
 
-    public void setPhones(List<Phone> phones) { this.phones = phones; }
+    public void setPhones(ArrayList<Phone> phones) { this.phones = phones; }
 
 
     // METHODS
 
     public String Create () {
-        //Contact c = new Contact (firstName, lastName, email, addresses);
-        System.out.println("creation de " + firstName + " avec les numeros " + phones.get(0).getPhoneKind() + " " + phones.get(0).getPhoneNumber());
+        Contact c = new Contact (0, firstName, lastName, email, addresses, phones);
+        System.out.println("");
+        c_s.create(c);
         return null;
     }
 

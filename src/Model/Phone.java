@@ -6,8 +6,6 @@ public class Phone {
     private String phoneKind;
     private String phoneNumber;
 
-
-
     public int getId() { return id; }
 
     public void setId(int id) { this.id = id; }
@@ -25,4 +23,5 @@ public class Phone {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
 }

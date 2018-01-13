@@ -2,17 +2,17 @@ package Model;
 
 public class Address {
 
-    //private int id;
+    private int id;
     private String street;
     private String city;
     private String zip;
     private String country;
 
-   /* public int getId() { return id; }
+    public int getId() { return id; }
 
     public void setId(int id) {
         this.id = id;
-    }*/
+    }
 
     public String getStreet() {
         return street;
@@ -45,5 +45,4 @@ public class Address {
     public void setCountry(String country) {
         this.country = country;
     }
-
 }
