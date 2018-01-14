@@ -1,21 +1,18 @@
 package Beans;
 
-
 import Model.Address;
 import Model.Contact;
 import Model.Phone;
 import Services.implementations.ContactServices;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
-import java.sql.Array;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 @ManagedBean(name="contact")
-@ViewScoped
+@SessionScoped
 public class ContactBean {
 
     ContactServices c_s;
@@ -37,6 +34,7 @@ public class ContactBean {
         c_s = new ContactServices();
 
         contacts = c_s.getAll();
+
     }
 
     // GETTERS AND SETTERS
@@ -65,15 +63,36 @@ public class ContactBean {
 
     public void setPhones(ArrayList<Phone> phones) { this.phones = phones; }
 
+    public List<Contact> getContacts() { return contacts; }
+
+    public void setContacts(List<Contact> contacts) { this.contacts = contacts; }
+
 
     // METHODS
 
     public String Create () {
         Contact c = new Contact (0, firstName, lastName, email, addresses, phones);
-        System.out.println("");
         c_s.create(c);
-        return null;
+
+        contacts = c_s.getAll();
+
+        return "ContactRead";
     }
+
+    public String Edit(int id) {
+        System.out.println("edit " + id);
+        return "error";
+    }
+
+    public String Delete (int id) {
+        c_s.delete(id);
+
+        contacts = c_s.getAll();
+
+        return "ContactRead";
+    }
+
+
 
     // AJAX METHODS
 
@@ -85,12 +104,8 @@ public class ContactBean {
 
     public void addAddress() { addresses.add(new Address()); }
 
-    public void removeAddress(Address item) {
-        addresses.remove(item);
-    }
+    public void removeAddress(Address item) { addresses.remove(item); }
 
-    public void save() {
-        System.out.println("items: " + phones);
-    }
+
 
 }

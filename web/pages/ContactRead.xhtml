@@ -16,35 +16,103 @@
             <table class="table table-hover">
                 <thead>
                 <tr>
+                    <th>#</th>
                     <th>Firstname</th>
                     <th>Lastname</th>
                     <th>Email</th>
+                    <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>john@example.com</td>
-                </tr>
-                <tr>
-                    <td>Mary</td>
-                    <td>Moe</td>
-                    <td>mary@example.com</td>
-                </tr>
-                <tr>
-                    <td>July</td>
-                    <td>Dooley</td>
-                    <td>july@example.com</td>
-                </tr>
+                <ui:repeat value="#{contact.contacts}" var="c">
+                    <tr>
+                        <td>#{c.id}</td>
+                        <td>#{c.firstName}</td>
+                        <td>#{c.lastName}</td>
+                        <td>#{c.email}</td>
+                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal#{c.id}">
+                            More
+                        </button></td>
+                    </tr>
+                </ui:repeat>
                 </tbody>
             </table>
         </div>
     </div>
 
-    <ui:repeat value="#{contact.phones}" var="phone_item">
-        #{phone_item.phoneNumber}
+    <!-- Modal Infos -->
+    <ui:repeat value="#{contact.contacts}" var="c">
+        <div class="modal fade" id="modal#{c.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                            #{c.firstName} #{c.lastName}
+                            <div class="text-muted"><small>#{c.email}</small></div>
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <h6>Addresses</h6>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">Street</th>
+                                <th scope="col">City</th>
+                                <th scope="col">Zip</th>
+                                <th scope="col">Country</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <ui:repeat value="#{c.addresses}" var="address">
+                                <tr>
+                                    <td>#{address.street}</td>
+                                    <td>#{address.city}</td>
+                                    <td>#{address.zip}</td>
+                                    <td>#{address.country}</td>
+                                </tr>
+                            </ui:repeat>
+                            </tbody>
+                        </table>
+
+                        <h6>Phones</h6>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">Phone kind</th>
+                                <th scope="col">Phone number</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <ui:repeat value="#{c.phones}" var="phone">
+                                <tr>
+                                    <td>#{phone.phoneKind}</td>
+                                    <td>#{phone.phoneNumber}</td>
+                                </tr>
+                            </ui:repeat>
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <div class="modal-footer">
+                        <h:form>
+                            <h:commandButton value ="Delete" action="#{contact.Delete(c.id)}" styleClass="btn btn-danger"/>
+                        </h:form>
+                        <h:form>
+                            <h:commandButton value ="Edit"  action="#{contact.Edit(c.id)}" styleClass="btn btn-primary"/>
+                        </h:form>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </ui:repeat>
+
+
+
 
     <ui:include src="#{request.contextPath}/template/footer.xhtml" />
 </f:view>

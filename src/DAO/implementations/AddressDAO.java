@@ -3,6 +3,7 @@ package DAO.implementations;
 import DAO.models.DAOLayer;
 import DAO.models.DAOLayer_ContactItems;
 import Model.Address;
+import Model.Phone;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -18,8 +19,38 @@ public class AddressDAO implements DAOLayer_ContactItems <Address> {
     ResultSet rs;
 
     @Override
-    public ArrayList<Address> getAll(int id) {
-        return null;
+    public ArrayList<Address> getAll(int id_Contact) {
+
+        try { Class.forName("com.mysql.jdbc.Driver"); } catch (ClassNotFoundException e) {}
+
+        ArrayList<Address> a = new ArrayList<Address>();
+
+        try{
+            cx = DriverManager.getConnection(url , uid, passwd);
+            stmt = cx.prepareStatement("SELECT * FROM addresses where refContact = ?");
+            stmt.setObject(1, id_Contact);
+            rs = stmt.executeQuery();
+            while(rs.next()){
+                int id = rs.getInt("id");
+                int refContact = rs.getInt("refContact");
+                String street = rs.getString("street");
+                String city = rs.getString("city");
+                String zip = rs.getString("zip");
+                String country = rs.getString("country");
+                a.add(new Address(id, refContact, street, city, zip, country));
+            }
+            stmt.close();
+            cx.close();
+        }catch(SQLException e){ throw new RuntimeException(e);
+        }finally {
+            try{
+                stmt.close();
+                cx.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return a;
     }
 
     @Override
@@ -37,6 +68,27 @@ public class AddressDAO implements DAOLayer_ContactItems <Address> {
             stmt.setObject (5, a.getZip());
             stmt.setObject (6, a.getCountry());
 
+            stmt.executeUpdate();
+        }
+        catch (SQLException e){throw new RuntimeException(e);
+        }finally{
+            try{
+                if (stmt != null) stmt.close();
+                if (cx != null) cx.close();
+            }catch (Exception e){throw new RuntimeException(e);}
+        }
+    }
+
+    @Override
+    public void delete(int id) {
+        try {Class.forName("com.mysql.jdbc.Driver");
+        }catch (ClassNotFoundException e1) {e1.printStackTrace();}
+
+        // Request
+        try {
+            cx = DriverManager.getConnection(url, uid, passwd);
+            stmt = cx.prepareStatement("DELETE FROM addresses WHERE refContact = ?");
+            stmt.setObject (1, id);
             stmt.executeUpdate();
         }
         catch (SQLException e){throw new RuntimeException(e);

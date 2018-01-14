@@ -16,7 +16,8 @@ public class ContactServices implements ServiceLayer <Contact> {
 
     @Override
     public ArrayList<Contact> getAll() {
-        return null;
+        ContactDAO c_d = new ContactDAO();
+        return c_d.getAll();
     }
 
     @Override
@@ -41,11 +42,16 @@ public class ContactServices implements ServiceLayer <Contact> {
 
     @Override
     public void update(int id, Contact element) {
-
     }
 
     @Override
     public void delete(int id) {
+        ContactDAO c_d = new ContactDAO();
+        PhoneDAO p_d = new PhoneDAO();
+        AddressDAO a_d = new AddressDAO();
 
+        p_d.delete(id);
+        a_d.delete(id);
+        c_d.delete(id);
     }
 }

@@ -3,10 +3,24 @@ package Model;
 public class Address {
 
     private int id;
+    private int refContact;
     private String street;
     private String city;
     private String zip;
     private String country;
+
+    public Address(){
+
+    }
+
+    public Address(int id, int refContact, String street, String city, String zip, String country) {
+        this.id = id;
+        this.refContact = refContact;
+        this.street = street;
+        this.city = city;
+        this.zip = zip;
+        this.country = country;
+    }
 
     public int getId() { return id; }
 
@@ -45,4 +59,8 @@ public class Address {
     public void setCountry(String country) {
         this.country = country;
     }
+
+    public int getRefContact() { return refContact; }
+
+    public void setRefContact(int refContact) { this.refContact = refContact; }
 }

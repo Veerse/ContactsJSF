@@ -8,6 +8,16 @@
   <component name="ChangeListManager">
     <list default="true" id="c899dec4-b034-45e6-8f20-875eadeae37f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Beans/ContactBean.java" afterPath="$PROJECT_DIR$/src/Beans/ContactBean.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DAO/implementations/AddressDAO.java" afterPath="$PROJECT_DIR$/src/DAO/implementations/AddressDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DAO/implementations/ContactDAO.java" afterPath="$PROJECT_DIR$/src/DAO/implementations/ContactDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DAO/implementations/PhoneDAO.java" afterPath="$PROJECT_DIR$/src/DAO/implementations/PhoneDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DAO/models/DAOLayer_ContactItems.java" afterPath="$PROJECT_DIR$/src/DAO/models/DAOLayer_ContactItems.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Address.java" afterPath="$PROJECT_DIR$/src/Model/Address.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Phone.java" afterPath="$PROJECT_DIR$/src/Model/Phone.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Services/implementations/ContactServices.java" afterPath="$PROJECT_DIR$/src/Services/implementations/ContactServices.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pages/ContactRead.xhtml" afterPath="$PROJECT_DIR$/web/pages/ContactRead.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pages/main.xhtml" afterPath="$PROJECT_DIR$/web/pages/main.xhtml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,36 +27,29 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-            <file leaf-file-name="ContactDAO.java" pinned="false" current-in-tab="true">
-              <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.933/ContactDAO.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="92">
-                    <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="52" selection-end-column="9" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
+  <component name="FavoritesManager">
+    <favorites_list name="ContactsJSF" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="ContactBean.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Beans/ContactBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-17">
-              <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+            <state relative-caret-position="409">
+              <caret line="89" column="32" lean-forward="false" selection-start-line="89" selection-start-column="32" selection-end-line="89" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.xhtml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/pages/main.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="69" lean-forward="false" selection-start-line="10" selection-start-column="69" selection-end-line="10" selection-end-column="69" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -54,47 +57,8 @@
       <file leaf-file-name="ContactServices.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Services/implementations/ContactServices.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="32" column="48" lean-forward="false" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
-              <folding>
-                <element signature="e#919#920#0" expanded="true" />
-                <element signature="e#946#947#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PhoneDAO.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/DAO/implementations/PhoneDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="34" column="49" lean-forward="false" selection-start-line="34" selection-start-column="49" selection-end-line="34" selection-end-column="49" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1515873614202" expanded="true" signature="829:908" ph="INSERT INTO phones... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddressDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DAO/implementations/AddressDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="17" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1515873493076" expanded="true" signature="868:960" ph="INSERT INTO addresses... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DAOLayer_ContactItems.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DAO/models/DAOLayer_ContactItems.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+            <state relative-caret-position="86">
+              <caret line="30" column="22" lean-forward="true" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -103,12 +67,15 @@
       <file leaf-file-name="ContactDAO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DAO/implementations/ContactDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="17" selection-end-column="17" />
+            <state relative-caret-position="366">
+              <caret line="127" column="69" lean-forward="false" selection-start-line="127" selection-start-column="69" selection-end-line="127" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1515870324368" expanded="true" signature="775:803" ph="SELECT MAX(i... contacts" />
-                <marker date="1515870324368" expanded="true" signature="1615:1688" ph="INSERT INTO contacts... " />
+                <element signature="e#1523#1532#0" expanded="true" />
+                <marker date="1515955703182" expanded="true" signature="752:780" ph="SELECT MAX(i... contacts" />
+                <marker date="1515955703182" expanded="true" signature="1654:1676" ph="SELECT * FRO... contacts" />
+                <marker date="1515955703182" expanded="true" signature="2640:2713" ph="INSERT INTO contacts... " />
+                <marker date="1515955703182" expanded="true" signature="3678:3711" ph="DELETE FROM " />
               </folding>
             </state>
           </provider>
@@ -163,24 +130,24 @@
         <option value="$PROJECT_DIR$/web/pages/template/layout.xhtml" />
         <option value="$PROJECT_DIR$/web/pages/template/header.xhtml" />
         <option value="$PROJECT_DIR$/web/pages/index.xhtml" />
-        <option value="$PROJECT_DIR$/web/pages/main.xhtml" />
         <option value="$PROJECT_DIR$/web/pages/template/footer.xhtml" />
         <option value="$PROJECT_DIR$/web/pages/error.xhtml" />
         <option value="$PROJECT_DIR$/web/pages/template/navbar.xhtml" />
         <option value="$PROJECT_DIR$/web/pages/ContactCreate.xhtml" />
-        <option value="$PROJECT_DIR$/web/pages/ContactRead.xhtml" />
         <option value="$PROJECT_DIR$/src/DAO/implementations/Phone.java" />
-        <option value="$PROJECT_DIR$/src/Model/Phone.java" />
-        <option value="$PROJECT_DIR$/src/Model/Address.java" />
         <option value="$PROJECT_DIR$/src/Services/models/ServiceLayer.java" />
         <option value="$PROJECT_DIR$/src/Model/Contact.java" />
         <option value="$USER_HOME$/AppData/Local/Temp/Rar$DIa0.933/ContactDAO.java" />
-        <option value="$PROJECT_DIR$/src/DAO/implementations/ContactDAO.java" />
-        <option value="$PROJECT_DIR$/src/Beans/ContactBean.java" />
+        <option value="$PROJECT_DIR$/src/Model/Address.java" />
+        <option value="$PROJECT_DIR$/src/Model/Phone.java" />
+        <option value="$PROJECT_DIR$/web/pages/ContactRead.xhtml" />
         <option value="$PROJECT_DIR$/src/DAO/models/DAOLayer_ContactItems.java" />
         <option value="$PROJECT_DIR$/src/Services/implementations/ContactServices.java" />
-        <option value="$PROJECT_DIR$/src/DAO/implementations/AddressDAO.java" />
         <option value="$PROJECT_DIR$/src/DAO/implementations/PhoneDAO.java" />
+        <option value="$PROJECT_DIR$/src/DAO/implementations/AddressDAO.java" />
+        <option value="$PROJECT_DIR$/src/DAO/implementations/ContactDAO.java" />
+        <option value="$PROJECT_DIR$/src/Beans/ContactBean.java" />
+        <option value="$PROJECT_DIR$/web/pages/main.xhtml" />
       </list>
     </option>
   </component>
@@ -198,10 +165,10 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="97" />
-    <option name="y" value="-11" />
-    <option name="width" value="1369" />
-    <option name="height" value="752" />
+    <option name="x" value="469" />
+    <option name="y" value="-16" />
+    <option name="width" value="1088" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -218,9 +185,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -281,6 +245,13 @@
             <path>
               <item name="ContactsJSF" type="b2602c69:ProjectViewProjectNode" />
               <item name="ContactsJSF" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Services" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ContactsJSF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ContactsJSF" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -299,20 +270,16 @@
               <item name="ContactsJSF" type="b2602c69:ProjectViewProjectNode" />
               <item name="ContactsJSF" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="template" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ContactsJSF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ContactsJSF" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -505,7 +472,9 @@
       <workItem from="1515524052471" duration="8369000" />
       <workItem from="1515612375623" duration="3778000" />
       <workItem from="1515854114748" duration="10230000" />
-      <workItem from="1515869913429" duration="1765000" />
+      <workItem from="1515869913429" duration="1920000" />
+      <workItem from="1515932380193" duration="767000" />
+      <workItem from="1515946134177" duration="8887000" />
     </task>
     <task id="LOCAL-00001" summary="Contact create form first attempt">
       <created>1515455161161</created>
@@ -542,17 +511,25 @@
       <option name="project" value="LOCAL" />
       <updated>1515873811845</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Contact creation (adresses &amp; phones) ok, navbar templated">
+      <created>1515873923511</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1515873923511</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52235000" />
+    <option name="totallyTimeSpent" value="62044000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32934782" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31847826" sideWeight="0.5127932" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -564,18 +541,18 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32608697" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32608697" sideWeight="0.49573562" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.4978678" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31847826" sideWeight="0.48933902" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32934782" sideWeight="0.4978678" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31847826" sideWeight="0.48720682" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.4978678" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33804348" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12739871" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12846482" sideWeight="0.48220065" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2655642" sideWeight="0.5177994" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12686567" sideWeight="0.50558215" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -623,7 +600,16 @@
     <option name="LAST_COMMIT_MESSAGE" value="Contact creation (adresses &amp; phones) ok, navbar templated" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Beans/ContactBean.java</url>
+          <line>106</line>
+          <properties />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
@@ -636,32 +622,6 @@
     <select />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/pages/index.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="10" lean-forward="false" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/faces-config.xml">
-      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Beans/LoginBean.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -676,7 +636,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -696,14 +655,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/faces-config.xml">
-      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Beans/LoginBean.java">
@@ -720,7 +679,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -766,14 +724,14 @@
     <entry file="file://$PROJECT_DIR$/web/pages/template/header.xhtml" />
     <entry file="file://$PROJECT_DIR$/web/pages/template/layout.xhtml" />
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/faces-config.xml">
-      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Beans/LoginBean.java">
@@ -790,7 +748,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="43" lean-forward="false" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -813,55 +770,47 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="69" lean-forward="false" selection-start-line="11" selection-start-column="69" selection-end-line="11" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/pages/main.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="46" lean-forward="false" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/pages/ContactRead.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="45" column="32" lean-forward="false" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.476/ContactDAO.java" />
-    <entry file="file://$PROJECT_DIR$/web/pages/ContactCreate.xhtml">
+    <entry file="file://$PROJECT_DIR$/src/Model/Contact.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="90" lean-forward="false" selection-start-line="35" selection-start-column="90" selection-end-line="35" selection-end-column="90" />
-          <folding />
+        <state relative-caret-position="374">
+          <caret line="37" column="23" lean-forward="false" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Phone.java">
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.933/ContactDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="92">
+          <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="52" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.268/ContactDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="62" column="0" lean-forward="true" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Address.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="46" column="5" lean-forward="false" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+        <state relative-caret-position="204">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DAO/models/DAOLayer.java">
+    <entry file="file://$PROJECT_DIR$/src/Model/Phone.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="11" selection-end-column="24" />
+        <state relative-caret-position="221">
+          <caret line="16" column="27" lean-forward="true" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -874,83 +823,121 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Contact.java">
+    <entry file="file://$PROJECT_DIR$/src/DAO/models/DAOLayer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="37" column="23" lean-forward="false" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Beans/ContactBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="102">
+          <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="11" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DAO/models/DAOLayer_ContactItems.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+        <state relative-caret-position="136">
+          <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DAO/implementations/ContactDAO.java">
+    <entry file="file://$PROJECT_DIR$/web/pages/ContactCreate.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="17" selection-end-column="17" />
+        <state relative-caret-position="306">
+          <caret line="72" column="145" lean-forward="false" selection-start-line="72" selection-start-column="38" selection-end-line="72" selection-end-column="145" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/pages/ContactRead.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="90" column="36" lean-forward="true" selection-start-line="90" selection-start-column="36" selection-end-line="90" selection-end-column="36" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1515870324368" expanded="true" signature="775:803" ph="SELECT MAX(i... contacts" />
-            <marker date="1515870324368" expanded="true" signature="1615:1688" ph="INSERT INTO contacts... " />
+            <element signature="e#2372#2379#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Services/implementations/ContactServices.java">
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.409/ContactDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="32" column="48" lean-forward="false" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
-          <folding>
-            <element signature="e#919#920#0" expanded="true" />
-            <element signature="e#946#947#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DAO/implementations/AddressDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="17" selection-end-column="17" />
+        <state relative-caret-position="485">
+          <caret line="99" column="9" lean-forward="true" selection-start-line="83" selection-start-column="8" selection-end-line="99" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1515873493076" expanded="true" signature="868:960" ph="INSERT INTO addresses... " />
+            <element signature="e#726#735#0" expanded="true" />
+            <marker date="1515955606901" expanded="true" signature="858:902" ph="SELECT * FRO... addresses" />
+            <marker date="1515955606901" expanded="true" signature="2039:2131" ph="INSERT INTO addresses... " />
+            <marker date="1515955606901" expanded="true" signature="3027:3069" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DAO/implementations/PhoneDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="34" column="49" lean-forward="false" selection-start-line="34" selection-start-column="49" selection-end-line="34" selection-end-column="49" />
+        <state relative-caret-position="434">
+          <caret line="94" column="9" lean-forward="true" selection-start-line="78" selection-start-column="8" selection-end-line="94" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1515873614202" expanded="true" signature="829:908" ph="INSERT INTO phones... " />
+            <element signature="e#667#674#0" expanded="true" />
+            <marker date="1515955581355" expanded="true" signature="797:838" ph="SELECT * FRO... phones" />
+            <marker date="1515955581355" expanded="true" signature="1896:1975" ph="INSERT INTO phones... " />
+            <marker date="1515955581355" expanded="true" signature="2789:2828" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.933/ContactDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/Services/implementations/ContactServices.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="52" selection-end-column="9" />
+        <state relative-caret-position="86">
+          <caret line="30" column="22" lean-forward="true" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.545/ContactDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="119" column="8" lean-forward="false" selection-start-line="119" selection-start-column="8" selection-end-line="135" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DAO/implementations/ContactDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="127" column="69" lean-forward="false" selection-start-line="127" selection-start-column="69" selection-end-line="127" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1523#1532#0" expanded="true" />
+            <marker date="1515955703182" expanded="true" signature="752:780" ph="SELECT MAX(i... contacts" />
+            <marker date="1515955703182" expanded="true" signature="1654:1676" ph="SELECT * FRO... contacts" />
+            <marker date="1515955703182" expanded="true" signature="2640:2713" ph="INSERT INTO contacts... " />
+            <marker date="1515955703182" expanded="true" signature="3678:3711" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Beans/ContactBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="89" column="32" lean-forward="false" selection-start-line="89" selection-start-column="32" selection-end-line="89" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/pages/main.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="69" lean-forward="false" selection-start-line="10" selection-start-column="69" selection-end-line="10" selection-end-column="69" />
           <folding />
         </state>
       </provider>

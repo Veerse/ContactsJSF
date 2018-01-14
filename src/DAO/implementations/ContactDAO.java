@@ -5,7 +5,6 @@ import Model.Contact;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 
 public class ContactDAO implements DAOLayer <Contact> {
 
@@ -46,7 +45,41 @@ public class ContactDAO implements DAOLayer <Contact> {
 
     @Override
     public ArrayList<Contact> getAll() {
-        return null;
+
+        PhoneDAO p_d = new PhoneDAO();
+        AddressDAO a_d = new AddressDAO();
+
+        try { Class.forName(driver); }catch (ClassNotFoundException e1) {e1.printStackTrace();}
+
+        ArrayList<Contact> l = new ArrayList<Contact>();
+
+        try{
+            cx = DriverManager.getConnection(url, uid, passwd);
+            stmt = cx.prepareStatement("SELECT * FROM contacts");
+            rs = stmt.executeQuery();
+
+            while(rs.next()){
+                int id = rs.getInt("id");
+                String firstName = rs.getString("firstName");
+                String lastName = rs.getString("lastName");
+                String email = rs.getString("email");
+
+
+                l.add(new Contact(id, firstName, lastName, email, a_d.getAll(id), p_d.getAll(id)));
+            }
+
+
+        }catch(SQLException e){throw new RuntimeException(e);
+        }finally{
+            try{
+                stmt.close();
+                cx.close();
+            }catch (SQLException e){
+                throw new RuntimeException(e);
+            }
+        }
+
+        return l;
     }
 
     @Override
@@ -70,7 +103,7 @@ public class ContactDAO implements DAOLayer <Contact> {
             try{
                 if (stmt != null) stmt.close();
                 if (cx != null) cx.close();
-            }catch (Exception e){throw new RuntimeException(e);}
+            }catch (SQLException e){throw new RuntimeException(e);}
         }
     }
 
@@ -86,6 +119,22 @@ public class ContactDAO implements DAOLayer <Contact> {
 
     @Override
     public void delete(int id) {
+        try {Class.forName("com.mysql.jdbc.Driver");
+        }catch (ClassNotFoundException e1) {e1.printStackTrace();}
 
+        // Request
+        try {
+            cx = DriverManager.getConnection(url, uid, passwd);
+            stmt = cx.prepareStatement("DELETE FROM contacts WHERE id = ?");
+            stmt.setObject (1, id);
+            stmt.executeUpdate();
+        }
+        catch (SQLException e){throw new RuntimeException(e);
+        }finally{
+            try{
+                if (stmt != null) stmt.close();
+                if (cx != null) cx.close();
+            }catch (Exception e){throw new RuntimeException(e);}
+        }
     }
 }
