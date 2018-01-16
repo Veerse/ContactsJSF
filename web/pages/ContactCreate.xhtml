@@ -33,7 +33,7 @@
             <!-- Adresses -->
             <div class="form-group">
                 <label for="addresses">Addresses</label>
-                <h:dataTable value="#{contact.addresses}" var="itemAddress" id="addresses">
+                <h:dataTable value="#{address.addresses}" var="itemAddress" id="addresses">
 
                     <div class="row">
                         <div class="col">
@@ -49,19 +49,19 @@
                             <h:column> <h:inputText value="#{itemAddress.country}" styleClass="form-control" p:placeholder="Country" /></h:column>
                         </div>
                         <div class="col">
-                            <h:column><h:commandButton value="X" action="#{contact.removeAddress(itemAddress)}" styleClass="btn btn-warning btn-sm"/></h:column>
+                            <h:column><h:commandButton value="X" action="#{address.removeAddress(itemAddress)}" styleClass="btn btn-warning btn-sm"/></h:column>
                         </div>
                     </div>
                 </h:dataTable>
             </div>
             <div class="form-group">
-                <h:commandButton value="Add an address" action="#{contact.addAddress}" styleClass="btn btn-info btn-sm"/>
+                <h:commandButton value="Add an address" action="#{address.addAddress}" styleClass="btn btn-info btn-sm"/>
             </div>
 
             <!-- Phones -->
             <div class="form-group">
                 <label for="phones">Phones</label>
-                <h:dataTable value="#{contact.phones}" var="itemPhone" id="phones">
+                <h:dataTable value="#{phone.phones}" var="itemPhone" id="phones">
                     <div class="row">
                         <div class="col">
                             <h:column><h:inputText value="#{itemPhone.phoneKind}" styleClass="form-control" p:placeholder="Phone kind"/></h:column>
@@ -70,16 +70,16 @@
                                 <h:column><h:inputText value="#{itemPhone.phoneNumber}" styleClass="form-control" p:placeholder="Phone number"/></h:column>
                         </div>
                         <div class="col">
-                            <h:column><h:commandButton value="X" action="#{contact.removePhone(itemPhone)}" styleClass="btn btn-warning btn-sm"/></h:column>
+                            <h:column><h:commandButton value="X" action="#{phone.removePhone(itemPhone)}" styleClass="btn btn-warning btn-sm"/></h:column>
                         </div>
                     </div>
                 </h:dataTable>
             </div>
             <div class="form-group">
-                <h:commandButton value="Add a phone" action="#{contact.addPhone}" styleClass="btn btn-info btn-sm" />
+                <h:commandButton value="Add a phone" action="#{phone.addPhone}" styleClass="btn btn-info btn-sm" />
             </div>
 
-            <h:commandButton value="Create" action="#{contact.Create}"/><br/>
+            <h:commandButton value="Create" action="#{contact.Create(address.addresses, phone.phones)}" styleClass="btn btn-su"/><br/>
         </h:form>
     </div>
 

@@ -9,7 +9,7 @@ public interface ServiceLayer<T> {
 
     void create(T element);
     T read(int id);
-    void update(int id, T element);
+    void update(int id, T element, T oldElement);
     void delete(int id);
 
 }

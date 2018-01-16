@@ -64,10 +64,8 @@ public class ContactDAO implements DAOLayer <Contact> {
                 String lastName = rs.getString("lastName");
                 String email = rs.getString("email");
 
-
                 l.add(new Contact(id, firstName, lastName, email, a_d.getAll(id), p_d.getAll(id)));
             }
-
 
         }catch(SQLException e){throw new RuntimeException(e);
         }finally{
@@ -108,8 +106,41 @@ public class ContactDAO implements DAOLayer <Contact> {
     }
 
     @Override
-    public Contact read(int id) {
-        return null;
+    public Contact read(int id_Contact) {
+
+        PhoneDAO p_d = new PhoneDAO();
+        AddressDAO a_d = new AddressDAO();
+        Contact c = new Contact();
+
+        try { Class.forName(driver); }catch (ClassNotFoundException e1) {e1.printStackTrace();}
+
+        try{
+            cx = DriverManager.getConnection(url, uid, passwd);
+            stmt = cx.prepareStatement("SELECT * FROM contacts WHERE id = ?");
+            stmt.setObject(1, id_Contact);
+            rs = stmt.executeQuery();
+
+            if(rs.next()){
+                int id = rs.getInt("id");
+                String firstName = rs.getString("firstName");
+                String lastName = rs.getString("lastName");
+                String email = rs.getString("email");
+
+
+                c = new Contact(id, firstName, lastName, email, a_d.getAll(id_Contact), p_d.getAll(id_Contact));
+            }
+
+        }catch(SQLException e){throw new RuntimeException(e);
+        }finally{
+            try{
+                stmt.close();
+                if(stmt!=null) cx.close();
+            }catch (SQLException e){
+                throw new RuntimeException(e);
+            }
+        }
+
+        return c;
     }
 
     @Override

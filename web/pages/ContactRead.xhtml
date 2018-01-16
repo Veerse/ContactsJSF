@@ -67,12 +67,12 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <ui:repeat value="#{c.addresses}" var="address">
+                            <ui:repeat value="#{c.addresses}" var="a">
                                 <tr>
-                                    <td>#{address.street}</td>
-                                    <td>#{address.city}</td>
-                                    <td>#{address.zip}</td>
-                                    <td>#{address.country}</td>
+                                    <td>#{a.street}</td>
+                                    <td>#{a.city}</td>
+                                    <td>#{a.zip}</td>
+                                    <td>#{a.country}</td>
                                 </tr>
                             </ui:repeat>
                             </tbody>
@@ -87,10 +87,10 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <ui:repeat value="#{c.phones}" var="phone">
+                            <ui:repeat value="#{c.phones}" var="p">
                                 <tr>
-                                    <td>#{phone.phoneKind}</td>
-                                    <td>#{phone.phoneNumber}</td>
+                                    <td>#{p.phoneKind}</td>
+                                    <td>#{p.phoneNumber}</td>
                                 </tr>
                             </ui:repeat>
                             </tbody>
@@ -101,6 +101,7 @@
                         <h:form>
                             <h:commandButton value ="Delete" action="#{contact.Delete(c.id)}" styleClass="btn btn-danger"/>
                         </h:form>
+
                         <h:form>
                             <h:commandButton value ="Edit"  action="#{contact.Edit(c.id)}" styleClass="btn btn-primary"/>
                         </h:form>

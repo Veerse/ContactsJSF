@@ -6,19 +6,22 @@ import Model.Phone;
 import Services.implementations.ContactServices;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
-import javax.faces.bean.ViewScoped;
+import javax.faces.bean.RequestScoped;
 import java.util.ArrayList;
 import java.util.List;
 
 @ManagedBean(name="contact")
-@SessionScoped
+@RequestScoped
+
 public class ContactBean {
 
+    // Contact service
     ContactServices c_s;
 
+    // All the contacts
     private List<Contact> contacts;
 
+    // For the contact form
     private int id;
     private String firstName;
     private String lastName;
@@ -27,9 +30,11 @@ public class ContactBean {
     private ArrayList<Phone> phones;
 
     public ContactBean() {
-        contacts = new ArrayList<Contact>();
-        phones = new ArrayList<Phone>();
-        addresses = new ArrayList<Address>();
+        System.out.println("creating managedbean contact");
+
+        contacts = new ArrayList<>();
+        phones = new ArrayList<>();
+        addresses = new ArrayList<>();
 
         c_s = new ContactServices();
 
@@ -70,8 +75,9 @@ public class ContactBean {
 
     // METHODS
 
-    public String Create () {
-        Contact c = new Contact (0, firstName, lastName, email, addresses, phones);
+    public String Create (ArrayList<Address> a, ArrayList<Phone> p) {
+
+        Contact c = new Contact (0, firstName, lastName, email, a, p);
         c_s.create(c);
 
         contacts = c_s.getAll();
@@ -80,32 +86,31 @@ public class ContactBean {
     }
 
     public String Edit(int id) {
-        System.out.println("edit " + id);
-        return "error";
+
+        // retrieving old contact
+        Contact c = c_s.read(id);
+
+        setId(id);
+        setFirstName(c.getFirstName());
+        setLastName(c.getLastName());
+        setEmail(c.getEmail());
+        setPhones(c.getPhones());
+        setAddresses(c.getAddresses());
+
+        return "ContactEdit";
+    }
+
+    public String EditSubmit(){
+        System.out.println("editing " + firstName + id);
+        Contact c = new Contact(0, firstName, lastName, email, a, p)
+        return "ContactEdit";
     }
 
     public String Delete (int id) {
         c_s.delete(id);
-
         contacts = c_s.getAll();
 
         return "ContactRead";
     }
-
-
-
-    // AJAX METHODS
-
-    public void addPhone() { phones.add(new Phone()); }
-
-    public void removePhone(Phone item) {
-        phones.remove(item);
-    }
-
-    public void addAddress() { addresses.add(new Address()); }
-
-    public void removeAddress(Address item) { addresses.remove(item); }
-
-
 
 }

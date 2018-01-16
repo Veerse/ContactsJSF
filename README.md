@@ -4,7 +4,7 @@ Todo:
 
 *Add a group
 *Affect a contact to a group
-*Forms controls
+*Form's controls
 *DAO and Service layers
 *Front-end
 *Templating

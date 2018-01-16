@@ -37,11 +37,13 @@ public class ContactServices implements ServiceLayer <Contact> {
 
     @Override
     public Contact read(int id) {
-        return null;
+        ContactDAO c_d = new ContactDAO();
+        return c_d.read(id);
     }
 
     @Override
-    public void update(int id, Contact element) {
+    public void update(int id, Contact element, Contact oldElement) {
+
     }
 
     @Override
