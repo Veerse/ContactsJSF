@@ -2,6 +2,7 @@ package DAO.implementations;
 
 import DAO.models.DAOLayer;
 import Model.Contact;
+import Model.Group;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -167,5 +168,35 @@ public class ContactDAO implements DAOLayer <Contact> {
                 if (cx != null) cx.close();
             }catch (Exception e){throw new RuntimeException(e);}
         }
+    }
+
+    public ArrayList<Group> getGroups(int refContact) {
+
+        try { Class.forName(driver); }catch (ClassNotFoundException e1) {e1.printStackTrace();}
+
+        ArrayList<Group> groups = new ArrayList<>();
+
+        try{
+            cx = DriverManager.getConnection(url, uid, passwd);
+            stmt = cx.prepareStatement("SELECT * FROM contactgroupmapping INNER JOIN groups ON (groups.id = contactgroupmapping.refGroup) WHERE refContact = ?");
+            stmt.setObject(1, refContact);
+            rs = stmt.executeQuery();
+
+            while(rs.next()){
+                int id = rs.getInt("refGroup");
+                String groupName = rs.getString("groupName");
+
+                groups.add(new Group(id, groupName));
+            }
+
+        }catch(SQLException e){throw new RuntimeException(e);
+        }finally{
+            try{
+                if(stmt!=null) stmt.close();
+                if(cx!=null) cx.close();
+            }catch (SQLException e){ throw new RuntimeException(e); }
+        }
+
+        return groups;
     }
 }

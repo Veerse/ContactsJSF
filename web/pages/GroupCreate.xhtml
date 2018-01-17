@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" />
+<f:view>
+    <ui:include src="#{request.contextPath}/template/navbar.xhtml" />
+
+    <div class="container">
+        <h:form>
+            <h:messages/>
+
+            <div class="form-group">
+                <label for="firstName">Group name</label>
+                <h:inputText value="#{group.groupName}" styleClass="form-control" id="firstName" p:placeholder="Group name"/> <br/>
+            </div>
+
+            <h:commandButton value="Create" action="#{group.Create}" styleClass="btn btn-su"/><br/>
+        </h:form>
+    </div>
+
+
+    <ui:include src="#{request.contextPath}/template/footer.xhtml" />
+</f:view>
+</html>

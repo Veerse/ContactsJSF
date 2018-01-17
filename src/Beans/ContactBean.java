@@ -1,9 +1,12 @@
 package Beans;
 
+import DAO.implementations.GroupDAO;
 import Model.Address;
 import Model.Contact;
+import Model.Group;
 import Model.Phone;
 import Services.implementations.ContactServices;
+import Services.implementations.GroupServices;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
@@ -32,8 +35,6 @@ public class ContactBean {
     private ArrayList<Phone> phones;
 
     public ContactBean() {
-        System.out.println("creating managedbean contact");
-
         contacts = new ArrayList<>();
         phones = new ArrayList<>();
         addresses = new ArrayList<>();
@@ -94,20 +95,29 @@ public class ContactBean {
         setLastName(c.getLastName());
         setEmail(c.getEmail());
         setPhones(c.getPhones());
+        System.out.println("retrieved phone size " + c.getPhones().size());
         setAddresses(c.getAddresses());
         return "ContactEdit";
     }
 
     public String EditSubmit(){
-        System.out.println("editiing to " + firstName + "phonek1 = " + phones.get(0).getPhoneKind());
+        System.out.println("editiing to " + firstName + "phone1 = " + phones.size());
         return "ContactRead";
     }
 
     public String Delete (int id) {
         c_s.delete(id);
         contacts = c_s.getAll();
-
         return "ContactRead";
     }
 
+    public ArrayList<Group> getGroups(int id){
+        return c_s.getGroups(id);
+    }
+
+    public String DeleteAffectation(int refContact, int refGroup) {
+        GroupServices g_s = new GroupServices();
+        g_s.remove(refContact, refGroup);
+        return "ContactRead";
+    }
 }

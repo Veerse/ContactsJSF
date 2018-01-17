@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" />
+<f:view>
+
+    <ui:include src="#{request.contextPath}/template/navbar.xhtml" />
+
+    <div class="container h-100" style="padding-top: 2%">
+        <div class="row h-100 justify-content-center align-items-center">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Group name</th>
+                    <th>Members</th>
+                    <th>More</th>
+                </tr>
+                </thead>
+                <tbody>
+                <ui:repeat value="#{group.groups}" var="g">
+                    <tr>
+                        <td>#{g.id}</td>
+                        <td>#{g.groupName}</td>
+                        <td>#{group.CountMembers(g.id)}</td>
+                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal#{g.id}">
+                            More
+                        </button></td>
+                    </tr>
+                </ui:repeat>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal Infos -->
+    <ui:repeat value="#{group.groups}" var="g">
+        <div class="modal fade" id="modal#{g.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                            #{g.groupName}
+                            <div class="text-muted"><small>#{group.CountMembers(g.id)} members</small></div>
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <h6>Members</h6>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">id</th>
+                                <th scope="col">firstname</th>
+                                <th scope="col">lastname</th>
+                                <th scope="col">email</th>
+                                <th scope="col">delete</th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <ui:repeat value="#{group.getContactsFrom(g.id)}" var="c">
+                                <tr>
+                                    <td>#{c.id}</td>
+                                    <td>#{c.firstName}</td>
+                                    <td>#{c.lastName}</td>
+                                    <td>#{c.email}</td>
+                                    <td><h:form><h:commandButton action="#{group.DeleteAffectation(c.id, g.id)}" value="X" styleClass="btn btn-danger btn-sm"/></h:form></td>
+                                </tr>
+                            </ui:repeat>
+                            </tbody>
+                        </table>
+
+
+                        <h:form>
+                            <h:selectOneMenu value="#{group.userIdToAdd}">
+                                <f:selectItems value="#{group.getUnaffectedContacts(g.id)}" var="c2" itemLabel="#{c2.firstName}" itemValue="#{c2.id}"/>
+                            </h:selectOneMenu>
+                            <h:commandButton action="#{group.subscribe(g.id)}" value="Add" styleClass="btn btn-primary"/>
+                        </h:form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <h:form>
+                            <h:commandButton value ="Delete" action="#{group.Delete(g.id)}" styleClass="btn btn-danger"/>
+                        </h:form>
+
+                        <h:form>
+                            <h:commandButton value="Edit" action="error" styleClass="btn btn-primary"/>
+                        </h:form>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ui:repeat>
+
+    <ui:include src="#{request.contextPath}/template/footer.xhtml" />
+
+</f:view>
+</html>

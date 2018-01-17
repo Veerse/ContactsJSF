@@ -6,6 +6,7 @@ import DAO.implementations.PhoneDAO;
 import DAO.models.DAOLayer;
 import Model.Address;
 import Model.Contact;
+import Model.Group;
 import Model.Phone;
 import Services.models.ServiceLayer;
 
@@ -32,7 +33,6 @@ public class ContactServices implements ServiceLayer <Contact> {
 
         for (Phone p : c.getPhones())   p_d.create(p, c.getId());
         for (Address a : c.getAddresses())   a_d.create(a, c.getId());
-
     }
 
     @Override
@@ -55,5 +55,10 @@ public class ContactServices implements ServiceLayer <Contact> {
         p_d.delete(id);
         a_d.delete(id);
         c_d.delete(id);
+    }
+
+    public ArrayList<Group> getGroups(int id) {
+        ContactDAO c_d = new ContactDAO();
+        return c_d.getGroups(id);
     }
 }
