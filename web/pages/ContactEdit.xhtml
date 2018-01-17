@@ -16,6 +16,20 @@
     <h:form>
         <h:inputHidden value="#{contact.id}"/>
         <h:inputText value="#{contact.firstName}"/>
+        <h:inputText value="#{contact.lastName}"/>
+        <h:inputText value="#{contact.email}"/>
+
+        <h:dataTable value="#{contact.phones}" var="itemPhone" id="phones">
+            <div class="row">
+                <div class="col">
+                    <h:column><h:inputText value="#{itemPhone.phoneKind}" styleClass="form-control"/></h:column>
+                </div>
+                <div class="col">
+                    <h:column><h:inputText value="#{itemPhone.phoneNumber}" styleClass="form-control"/></h:column>
+                </div>
+            </div>
+        </h:dataTable>
+
         <h:commandButton action="#{contact.EditSubmit()}"/>
     </h:form>
 

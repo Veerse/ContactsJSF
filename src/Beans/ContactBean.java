@@ -18,6 +18,8 @@ public class ContactBean {
     // Contact service
     ContactServices c_s;
 
+
+
     // All the contacts
     private List<Contact> contacts;
 
@@ -86,24 +88,19 @@ public class ContactBean {
     }
 
     public String Edit(int id) {
-
-        // retrieving old contact
         Contact c = c_s.read(id);
-
-        setId(id);
+        setId(c.getId());
         setFirstName(c.getFirstName());
         setLastName(c.getLastName());
         setEmail(c.getEmail());
         setPhones(c.getPhones());
         setAddresses(c.getAddresses());
-
         return "ContactEdit";
     }
 
     public String EditSubmit(){
-        System.out.println("editing " + firstName + id);
-        Contact c = new Contact(0, firstName, lastName, email, a, p)
-        return "ContactEdit";
+        System.out.println("editiing to " + firstName + "phonek1 = " + phones.get(0).getPhoneKind());
+        return "ContactRead";
     }
 
     public String Delete (int id) {
