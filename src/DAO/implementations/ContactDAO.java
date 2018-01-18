@@ -160,6 +160,8 @@ public class ContactDAO implements DAOLayer <Contact> {
             stmt = cx.prepareStatement("DELETE FROM contacts WHERE id = ?");
             stmt.setObject (1, id);
             stmt.executeUpdate();
+
+            new MappingDAO().deleteContact(id);
         }
         catch (SQLException e){throw new RuntimeException(e);
         }finally{
@@ -199,4 +201,5 @@ public class ContactDAO implements DAOLayer <Contact> {
 
         return groups;
     }
+
 }

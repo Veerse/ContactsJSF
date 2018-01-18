@@ -22,6 +22,13 @@ public class GroupServices implements ServiceLayer <Group> {
         g_d.create(element);
     }
 
+    public void create(Group group, ArrayList<String> contactsToAdd) {
+        GroupDAO g_d = new GroupDAO();
+        group.setId(g_d.getAvailableId());
+        g_d.create(group);
+        g_d.subscribe(contactsToAdd, group.getId());
+    }
+
     @Override
     public Group read(int id) {
         return null;
@@ -54,4 +61,11 @@ public class GroupServices implements ServiceLayer <Group> {
     public ArrayList<Contact> getUnaffectedContacts(int idGroup) {
         return new GroupDAO().getUnaffectedContacts(idGroup);
     }
+
+    public void subscribe(ArrayList<String> contactsToAdd, int idGroup) {
+        System.out.println("contactsToAdd = [" + contactsToAdd + "], idGroup = [" + idGroup + "] (services)");
+        new GroupDAO().subscribe(contactsToAdd, idGroup);
+    }
+
+
 }

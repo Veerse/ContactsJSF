@@ -98,14 +98,22 @@
                         </table>
 
                         <h6>Groups</h6>
-                        <ul class="list-group">
-
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">Group name</th>
+                                <th scope="col"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
                             <ui:repeat value="#{contact.getGroups(c.id)}" var="grp">
-                                <li class="list-group-item">${grp.groupName} <h:form><h:commandButton action="#{contact.DeleteAffectation(c.id, grp.id)}" value="X" styleClass="btn btn-warning btn-sm"/></h:form></li>
+                                <tr>
+                                    <td>${grp.groupName}</td>
+                                    <td><h:form><h:commandButton action="#{contact.DeleteAffectation(c.id, grp.id)}" value="X" styleClass="btn btn-warning btn-sm"/></h:form></td>
+                                </tr>
                             </ui:repeat>
-
-
-                        </ul>
+                            </tbody>
+                        </table>
 
                     </div>
                     <div class="modal-footer">
@@ -116,6 +124,7 @@
                         <h:form>
                             <h:commandButton value="Edit" action="#{contact.Edit(c.id)}" styleClass="btn btn-primary"/>
                         </h:form>
+
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </div>

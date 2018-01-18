@@ -117,6 +117,8 @@ public class GroupDAO implements DAOLayer <Group> {
             stmt = cx.prepareStatement("DELETE FROM groups WHERE id = ?");
             stmt.setObject (1, id);
             stmt.executeUpdate();
+
+            new MappingDAO().deleteGroup(id);
         }
         catch (SQLException e){throw new RuntimeException(e);
         }finally{
@@ -234,5 +236,28 @@ public class GroupDAO implements DAOLayer <Group> {
         }
 
         return contacts;
+    }
+
+    public void subscribe(ArrayList<String> contactsToAdd, int idGroup) {
+        try { Class.forName(driver); }catch (ClassNotFoundException e1) {e1.printStackTrace();}
+        System.out.println("contactsToAdd = [" + contactsToAdd + "], idGroup = [" + idGroup + "] (dao)");
+        try {
+            for(String idContact : contactsToAdd){
+                cx = DriverManager.getConnection(url, uid, passwd);
+                stmt = cx.prepareStatement("INSERT INTO contactgroupmapping (refContact, refGroup) VALUES (?, ?)");
+
+                stmt.setObject (1, idContact);
+                stmt.setObject (2, idGroup);
+
+                stmt.executeUpdate();
+            }
+        }
+        catch (SQLException e){throw new RuntimeException(e);
+        }finally{
+            try{
+                if (stmt != null) stmt.close();
+                if (cx != null) cx.close();
+            }catch (Exception e){throw new RuntimeException(e);}
+        }
     }
 }

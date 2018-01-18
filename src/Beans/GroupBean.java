@@ -1,13 +1,18 @@
 package Beans;
 
-import DAO.implementations.ContactDAO;
 import Model.Contact;
 import Model.Group;
+import Services.implementations.ContactServices;
 import Services.implementations.GroupServices;
+import com.sun.org.apache.bcel.internal.generic.ARRAYLENGTH;
+import net.bootsfaces.C;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 @ManagedBean(name = "group")
 @RequestScoped
@@ -15,21 +20,18 @@ public class GroupBean {
 
     private GroupServices g_s;
 
-    private ArrayList<Contact> contacts;
     private ArrayList<Group> groups;
 
+    private ArrayList<String> contactsToAdd;
+
     private String groupName;
-    private int userIdToAdd;
 
     public GroupBean(){
         g_s = new GroupServices();
 
         groups = g_s.getAll();
+        contactsToAdd = new ArrayList<>();
     }
-
-    public ArrayList<Contact> getContacts() { return contacts; }
-
-    public void setContacts(ArrayList<Contact> contacts) { this.contacts = contacts; }
 
     public String getGroupName() { return groupName; }
 
@@ -39,14 +41,15 @@ public class GroupBean {
 
     public void setGroups(ArrayList<Group> groups) { this.groups = groups; }
 
-    public int getUserIdToAdd() { return userIdToAdd; }
+    public ArrayList<String> getContactsToAdd() { return contactsToAdd; }
 
-    public void setUserIdToAdd(int userIdToAdd) { this.userIdToAdd = userIdToAdd; }
+    public void setContactsToAdd(ArrayList<String> contactsToAdd) { this.contactsToAdd = contactsToAdd; }
 
 
     public String Create(){
-        g_s.create(new Group(0, getGroupName()));
+        g_s.create(new Group(0, getGroupName()), contactsToAdd);
         groups = g_s.getAll();
+        System.out.println("creating group " + groupName + " with members " + contactsToAdd);
         return "GroupRead";
     }
 
@@ -56,8 +59,13 @@ public class GroupBean {
         return "GroupRead";
     }
 
-    public ArrayList<Contact> getUnaffectedContacts(int id){
-        return new GroupServices().getUnaffectedContacts(id);
+    // Returns unaffected contacts on the group refGroup
+    public Map<String, Integer> getUnaffectedContacts(int refGroup){
+        ArrayList<Contact> c = new GroupServices().getUnaffectedContacts(refGroup);
+
+        Map<String, Integer> items = new HashMap<>();
+        for (Contact tmp : c)   items.put(tmp.getFirstName(), tmp.getId());
+        return items;
     }
 
     public ArrayList<Contact> getContactsFrom(int idGroup){
@@ -75,7 +83,18 @@ public class GroupBean {
     }
 
     public String subscribe(int idGroup) {
-        System.out.println("adding  " + userIdToAdd + " idGroup = [" + idGroup + "]");
-        return "GroupRead";
+        System.out.println("adding  " + contactsToAdd + " to idGroup = [" + idGroup + "]");
+        //new GroupServices().subscribe(contactsToAdd, idGroup);
+        return "error";
     }
+
+
+    public Map<String, Integer> getAllContacts() {
+        ArrayList<Contact> contacts = new ContactServices().getAll();
+        Map<String, Integer> items = new HashMap<>();
+        for (Contact tmp : contacts)   items.put(tmp.getFirstName(), tmp.getId());
+        System.out.println(items);
+        return items;
+    }
+
 }

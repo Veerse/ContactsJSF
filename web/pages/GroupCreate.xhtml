@@ -20,6 +20,13 @@
                 <h:inputText value="#{group.groupName}" styleClass="form-control" id="firstName" p:placeholder="Group name"/> <br/>
             </div>
 
+            <div class="form-group">
+                <label for="addContacts">Add contacts</label>
+                <h:selectManyListbox value="#{group.contactsToAdd}" styleClass="form-control" id="addContacts" >
+                    <f:selectItems value="#{group.getAllContacts()}"/>
+                </h:selectManyListbox>
+            </div>
+
             <h:commandButton value="Create" action="#{group.Create}" styleClass="btn btn-su"/><br/>
         </h:form>
     </div>

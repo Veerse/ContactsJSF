@@ -12,6 +12,22 @@
     <ui:include src="#{request.contextPath}/template/navbar.xhtml" />
 
     <div class="container h-100" style="padding-top: 2%">
+        <div class="row">
+            <h5>Create an affectation</h5>
+        </div>
+        <h:form>
+            <div class="form-group">
+                <h:selectManyListbox value="#{group.contactsToAdd}" class="form-control">
+                    <f:selectItem itemValue="1" itemLabel="Un"/>
+                    <f:selectItem itemValue="2" itemLabel="Deux"/>
+                </h:selectManyListbox>
+
+            </div>
+            <h:commandButton value="Add" action="#{group.subscribe(2)}" styleClass="btn btn-primary"/>
+        </h:form>
+    </div>
+
+    <div class="container h-100" style="padding-top: 2%">
         <div class="row h-100 justify-content-center align-items-center">
             <table class="table table-hover">
                 <thead>
@@ -40,8 +56,8 @@
 
     <!-- Modal Infos -->
     <ui:repeat value="#{group.groups}" var="g">
-        <div class="modal fade" id="modal#{g.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
+        <div class="modal fade bd-example-modal-lg" id="modal#{g.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">
@@ -78,14 +94,6 @@
                             </ui:repeat>
                             </tbody>
                         </table>
-
-
-                        <h:form>
-                            <h:selectOneMenu value="#{group.userIdToAdd}">
-                                <f:selectItems value="#{group.getUnaffectedContacts(g.id)}" var="c2" itemLabel="#{c2.firstName}" itemValue="#{c2.id}"/>
-                            </h:selectOneMenu>
-                            <h:commandButton action="#{group.subscribe(g.id)}" value="Add" styleClass="btn btn-primary"/>
-                        </h:form>
 
                     </div>
                     <div class="modal-footer">
