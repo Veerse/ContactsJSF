@@ -15,18 +15,18 @@
     <main role="main" class="container">
 
         <div class="row h-100 justify-content-center align-items-center" style="padding-top: 5em">
-            <h4>Editing #{contact.firstName} #{contact.lastName}</h4>
+            <h4>#{msg['editing']} #{contact.firstName} #{contact.lastName}</h4>
         </div>
 
         <div class="row h-100 justify-content-center align-items-center" style="padding-top: 3em">
             <table class="table">
                 <thead>
                 <tr>
-                    <th scope="col">Street</th>
-                    <th scope="col">City</th>
-                    <th scope="col">Zipcode</th>
-                    <th scope="col">Country</th>
-                    <th scope="col">delete</th>
+                    <th scope="col">#{msg['street']}</th>
+                    <th scope="col">#{msg['city']}</th>
+                    <th scope="col">#{msg['zipcode']}</th>
+                    <th scope="col">#{msg['country']}</th>
+                    <th scope="col">#{msg['delete']}</th>
 
                 </tr>
                 </thead>
@@ -37,7 +37,7 @@
                         <td>#{a.city}</td>
                         <td>#{a.zip}</td>
                         <td>#{a.country}</td>
-                        <td><h:form><h:commandButton action="#{address.DeleteAddress(a.id)}" value="X" styleClass="btn btn-danger btn-sm"/></h:form></td>
+                        <td><h:form><h:commandButton action="#{address.DeleteAddress(a.id)}" value="#{msg['X']}" styleClass="btn btn-danger btn-sm"/></h:form></td>
                     </tr>
                 </ui:repeat>
                 </tbody>
@@ -45,7 +45,7 @@
         </div>
 
         <div style="padding-top: 2em">
-            <h5>Add an address</h5>
+            <h5>#{msg['add.address']}</h5>
             <h:form>
                 <div class="form-row">
                     <div class="col">
@@ -61,7 +61,7 @@
                         <h:inputText value= "#{address.country}" styleClass="form-control" p:placeholder="Country"/>
                     </div>
                 </div>
-                <h:commandButton value="Add"  action="#{address.addAddressTo(contact.id)}" styleClass="btn btn-primary"/>
+                <h:commandButton value="#{msg['add']}"  action="#{address.addAddressTo(contact.id)}" styleClass="btn btn-primary"/>
             </h:form>
         </div>
 
@@ -70,9 +70,9 @@
             <table class="table">
                 <thead>
                 <tr>
-                    <th scope="col">Phone kind</th>
-                    <th scope="col">Phone number</th>
-                    <th scope="col">Delete</th>
+                    <th scope="col">#{msg['phone.kind']}</th>
+                    <th scope="col">#{msg['phone.num']}</th>
+                    <th scope="col">#{msg['delete']}</th>
 
                 </tr>
                 </thead>
@@ -81,7 +81,7 @@
                     <tr>
                         <td>#{p.phoneKind}</td>
                         <td>#{p.phoneNumber}</td>
-                        <td><h:form><h:commandButton action="#{phone.DeletePhone(p.id)}" value="X" styleClass="btn btn-danger btn-sm"/></h:form></td>
+                        <td><h:form><h:commandButton action="#{phone.DeletePhone(p.id)}" value="#{msg['X']}" styleClass="btn btn-danger btn-sm"/></h:form></td>
                     </tr>
                 </ui:repeat>
                 </tbody>
@@ -90,7 +90,7 @@
 
 
         <div style="padding-top: 2em">
-            <h5>Add a phone</h5>
+            <h5>#{msg['add.phone']}</h5>
             <h:form>
                 <div class="form-row">
                     <div class="col">
@@ -100,27 +100,27 @@
                         <h:inputText value= "#{phone.phoneNumber}" styleClass="form-control" p:placeholder="Phone Number"/>
                     </div>
                 </div>
-                <h:commandButton value="Add"  action="#{phone.addPhoneTo(contact.id)}" styleClass="btn btn-primary"/>
+                <h:commandButton value="#{msg['add']}"  action="#{phone.addPhoneTo(contact.id)}" styleClass="btn btn-primary"/>
             </h:form>
         </div>
 
         <div style="padding-top: 3em">
-            <h5>Change infos</h5>
+            <h5>#{msg['change.info']}</h5>
             <h:form style="padding-top: 1em; padding-bottom: 3em">
                 <div class="form-group">
-                    <label for="firstName">First name</label>
+                    <label for="firstName">#{msg['first.name']}</label>
                     <h:inputText value="#{contact.firstName}" styleClass="form-control" id="firstName"/>
                 </div>
                 <div class="form-group">
-                    <label for="lastName">Last name</label>
+                    <label for="lastName">#{msg['last.name']}</label>
                     <h:inputText value="#{contact.lastName}" styleClass="form-control" id="lastName"/>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email</label>
+                    <label for="email">#{msg['email']}</label>
                     <h:inputText value="#{contact.email}" styleClass="form-control" id="email"/>
                 </div>
 
-                <h:commandButton value="Change" action="#{contact.SubmitChanges()}" styleClass="btn btn-primary"/>
+                <h:commandButton value=#{msg['change']} action="#{contact.SubmitChanges()}" styleClass="btn btn-primary"/>
 
             </h:form>
         </div>
