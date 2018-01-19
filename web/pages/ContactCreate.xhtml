@@ -17,21 +17,21 @@
             <h:messages/>
             <!-- Contact infos -->
             <div class="form-group">
-                <h:outputLabel value="#{msg['first.name']}" for="firstName" />
+                <label for="firstName">First name</label>
                 <h:inputText value="#{contact.firstName}" styleClass="form-control" id="firstName" p:placeholder="First name"/> <br/>
             </div>
             <div class="form-group">
-                <h:outputLabel value="#{msg['last.name']}" for="lastName" />
+                <label for="lastName">Last name</label>
                 <h:inputText value="#{contact.lastName}" styleClass="form-control" id="lastName" p:placeholder="Last name"/> <br/>
             </div>
             <div class="form-group">
-                <h:outputLabel value="#{msg['email']}" for="email" />
+                <label for="email">Email address</label>
                 <h:inputText value="#{contact.email}" styleClass="form-control" id="email" p:placeholder="Email address"/><br/>
             </div>
 
             <!-- Adresses -->
             <div class="form-group">
-                <h:outputLabel value="#{msg['addresses']}" for="addresses" />
+                <label for="addresses">Addresses</label>
                 <h:dataTable value="#{address.addresses}" var="itemAddress" id="addresses">
 
                     <div class="row">
@@ -54,13 +54,12 @@
                 </h:dataTable>
             </div>
             <div class="form-group">
-                <h:commandButton value=
-                <h:outputLabel value="#{msg['add.address']}" /> action="#{address.addAddress}" styleClass="btn btn-info btn-sm"/>
+                <h:commandButton value="Add an address" action="#{address.addAddress}" styleClass="btn btn-info btn-sm"/>
             </div>
 
             <!-- Phones -->
             <div class="form-group">
-                <h:outputLabel value="#{msg['phones']}" for="phones" />
+                <label for="phones">Phones</label>
                 <h:dataTable value="#{phone.phones}" var="itemPhone" id="phones">
                     <div class="row">
                         <div class="col">
@@ -76,10 +75,10 @@
                 </h:dataTable>
             </div>
             <div class="form-group">
-                <h:commandButton value="#{msg['add.phone']}" action="#{phone.addPhone}" styleClass="btn btn-info btn-sm" />
+                <h:commandButton value="Add a phone" action="#{phone.addPhone}" styleClass="btn btn-info btn-sm" />
             </div>
 
-            <h:commandButton value="#{msg['create']}" action="#{contact.Create(address.addresses, phone.phones)}" styleClass="btn btn-su"/><br/>
+            <h:commandButton value="Create" action="#{contact.Create(address.addresses, phone.phones)}" styleClass="btn btn-su"/><br/>
         </h:form>
     </div>
 
