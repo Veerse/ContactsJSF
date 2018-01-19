@@ -36,7 +36,8 @@ public class GroupServices implements ServiceLayer <Group> {
 
     @Override
     public void update(Group element) {
-
+        GroupDAO g_d = new GroupDAO();
+        g_d.update(element);
     }
 
     @Override
@@ -68,4 +69,7 @@ public class GroupServices implements ServiceLayer <Group> {
     }
 
 
+    public Group getGroup(int idGroup) {
+        return new GroupDAO().getGroup(idGroup);
+    }
 }

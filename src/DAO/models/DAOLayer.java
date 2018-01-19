@@ -8,7 +8,7 @@ public interface DAOLayer <T> {
 
     void create(T element);
     T read(int id);
-    void update(int id, T element);
+    void update(T element);
     void delete(int id);
     
 }

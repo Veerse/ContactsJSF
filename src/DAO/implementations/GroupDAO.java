@@ -102,8 +102,25 @@ public class GroupDAO implements DAOLayer <Group> {
     }
 
     @Override
-    public void update(int id, Group element) {
+    public void update(Group element) {
+        try {Class.forName("com.mysql.jdbc.Driver");
+        }catch (ClassNotFoundException e1) {e1.printStackTrace();}
 
+        // Request
+        try {
+            cx = DriverManager.getConnection(url, uid, passwd);
+            stmt = cx.prepareStatement("UPDATE groups SET groupName = ? WHERE id = ?");
+            stmt.setObject(1, element.getGroupName());
+            stmt.setObject(2, element.getId());
+            stmt.executeUpdate();
+        }
+        catch (SQLException e){throw new RuntimeException(e);
+        }finally{
+            try{
+                if (stmt != null) stmt.close();
+                if (cx != null) cx.close();
+            }catch (Exception e){throw new RuntimeException(e);}
+        }
     }
 
     @Override
@@ -259,5 +276,34 @@ public class GroupDAO implements DAOLayer <Group> {
                 if (cx != null) cx.close();
             }catch (Exception e){throw new RuntimeException(e);}
         }
+    }
+
+    public Group getGroup(int idGroup) {
+        try { Class.forName(driver); }catch (ClassNotFoundException e1) {e1.printStackTrace();}
+
+        Group g = new Group();
+
+        try{
+            cx = DriverManager.getConnection(url, uid, passwd);
+            stmt = cx.prepareStatement("SELECT * FROM groups WHERE id = ?");
+            stmt.setObject(1, idGroup);
+            rs = stmt.executeQuery();
+
+            if(rs.next()){
+                int id = rs.getInt("id");
+                String groupName = rs.getString("groupName");
+                g.setId(id);
+                g.setGroupName(groupName);
+            }
+
+        }catch(SQLException e){throw new RuntimeException(e);
+        }finally{
+            try{
+                if(stmt!=null) stmt.close();
+                if(cx!=null) cx.close();
+            }catch (SQLException e){ throw new RuntimeException(e); }
+        }
+
+        return g;
     }
 }

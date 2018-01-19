@@ -43,7 +43,7 @@ public class ContactServices implements ServiceLayer <Contact> {
 
     @Override
     public void update(Contact element) {
-
+        new ContactDAO().update(element);
     }
 
     @Override

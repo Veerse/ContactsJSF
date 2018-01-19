@@ -4,22 +4,128 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" />
 
 <f:view>
     <ui:include src="#{request.contextPath}/template/navbar.xhtml" />
 
-    <h:outputLabel value="Editing #{contact.firstName} #{contact.lastName}"/>
+    <main role="main" class="container">
 
-    <h:form>
-        <h:inputHidden value="#{contact.id}"/>
-        <h:inputText value="#{contact.firstName}"/>
-        <h:inputText value="#{contact.lastName}"/>
-        <h:inputText value="#{contact.email}"/>
-        <h:commandButton action="#{contact.EditSubmit()}"/>
-    </h:form>
+        <div class="row h-100 justify-content-center align-items-center" style="padding-top: 5em">
+            <h4>Editing #{contact.firstName} #{contact.lastName}</h4>
+        </div>
+
+        <div class="row h-100 justify-content-center align-items-center" style="padding-top: 3em">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Street</th>
+                    <th scope="col">City</th>
+                    <th scope="col">Zipcode</th>
+                    <th scope="col">Country</th>
+                    <th scope="col">delete</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <ui:repeat value="#{address.getAddressesOf(contact.id)}" var="a">
+                    <tr>
+                        <td>#{a.street}</td>
+                        <td>#{a.city}</td>
+                        <td>#{a.zip}</td>
+                        <td>#{a.country}</td>
+                        <td><h:form><h:commandButton action="#{address.DeleteAddress(a.id)}" value="X" styleClass="btn btn-danger btn-sm"/></h:form></td>
+                    </tr>
+                </ui:repeat>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="padding-top: 2em">
+            <h5>Add an address</h5>
+            <h:form>
+                <div class="form-row">
+                    <div class="col">
+                        <h:inputText value= "#{address.street}" styleClass="form-control" p:placeholder="Street"/>
+                    </div>
+                    <div class="col">
+                        <h:inputText value= "#{address.city}" styleClass="form-control" p:placeholder="City"/>
+                    </div>
+                    <div class="col">
+                        <h:inputText value= "#{address.zip}" styleClass="form-control" p:placeholder="Zip"/>
+                    </div>
+                    <div class="col">
+                        <h:inputText value= "#{address.country}" styleClass="form-control" p:placeholder="Country"/>
+                    </div>
+                </div>
+                <h:commandButton value="Add"  action="#{address.addAddressTo(contact.id)}" styleClass="btn btn-primary"/>
+            </h:form>
+        </div>
+
+
+        <div class="row h-100 justify-content-center align-items-center" style="padding-top: 2em">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Phone kind</th>
+                    <th scope="col">Phone number</th>
+                    <th scope="col">Delete</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <ui:repeat value="#{phone.getPhonesOf(contact.id)}" var="p">
+                    <tr>
+                        <td>#{p.phoneKind}</td>
+                        <td>#{p.phoneNumber}</td>
+                        <td><h:form><h:commandButton action="#{phone.DeletePhone(p.id)}" value="X" styleClass="btn btn-danger btn-sm"/></h:form></td>
+                    </tr>
+                </ui:repeat>
+                </tbody>
+            </table>
+        </div>
+
+
+        <div style="padding-top: 2em">
+            <h5>Add a phone</h5>
+            <h:form>
+                <div class="form-row">
+                    <div class="col">
+                        <h:inputText value= "#{phone.phoneKind}" styleClass="form-control" p:placeholder="Phone Kind"/>
+                    </div>
+                    <div class="col">
+                        <h:inputText value= "#{phone.phoneNumber}" styleClass="form-control" p:placeholder="Phone Number"/>
+                    </div>
+                </div>
+                <h:commandButton value="Add"  action="#{phone.addPhoneTo(contact.id)}" styleClass="btn btn-primary"/>
+            </h:form>
+        </div>
+
+        <div style="padding-top: 3em">
+            <h5>Change infos</h5>
+            <h:form style="padding-top: 1em; padding-bottom: 3em">
+                <div class="form-group">
+                    <label for="firstName">First name</label>
+                    <h:inputText value="#{contact.firstName}" styleClass="form-control" id="firstName"/>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last name</label>
+                    <h:inputText value="#{contact.lastName}" styleClass="form-control" id="lastName"/>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <h:inputText value="#{contact.email}" styleClass="form-control" id="email"/>
+                </div>
+
+                <h:commandButton value="Change" action="#{contact.SubmitChanges()}" styleClass="btn btn-primary"/>
+
+            </h:form>
+        </div>
+
+    </main>
 
     <ui:include src="#{request.contextPath}/template/footer.xhtml" />
 </f:view>

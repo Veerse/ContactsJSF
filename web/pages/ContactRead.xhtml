@@ -68,7 +68,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <ui:repeat value="#{c.addresses}" var="a">
+                            <ui:repeat value="#{address.getAddressesOf(c.id)}" var="a">
                                 <tr>
                                     <td>#{a.street}</td>
                                     <td>#{a.city}</td>
@@ -88,7 +88,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <ui:repeat value="#{c.phones}" var="p">
+                            <ui:repeat value="#{phone.getPhonesOf(c.id)}" var="p">
                                 <tr>
                                     <td>#{p.phoneKind}</td>
                                     <td>#{p.phoneNumber}</td>

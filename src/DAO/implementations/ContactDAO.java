@@ -145,8 +145,27 @@ public class ContactDAO implements DAOLayer <Contact> {
     }
 
     @Override
-    public void update(int id, Contact element) {
+    public void update(Contact element) {
+        try {Class.forName("com.mysql.jdbc.Driver");
+        }catch (ClassNotFoundException e1) {e1.printStackTrace();}
 
+        // Request
+        try {
+            cx = DriverManager.getConnection(url, uid, passwd);
+            stmt = cx.prepareStatement("UPDATE contacts SET firstName = ?, lastName = ?, email = ? WHERE id = ?");
+            stmt.setObject(1, element.getFirstName());
+            stmt.setObject(2, element.getLastName());
+            stmt.setObject(3, element.getEmail());
+            stmt.setObject(4, element.getId());
+            stmt.executeUpdate();
+        }
+        catch (SQLException e){throw new RuntimeException(e);
+        }finally{
+            try{
+                if (stmt != null) stmt.close();
+                if (cx != null) cx.close();
+            }catch (Exception e){throw new RuntimeException(e);}
+        }
     }
 
     @Override

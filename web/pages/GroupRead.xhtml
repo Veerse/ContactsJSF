@@ -12,22 +12,6 @@
     <ui:include src="#{request.contextPath}/template/navbar.xhtml" />
 
     <div class="container h-100" style="padding-top: 2%">
-        <div class="row">
-            <h5>Create an affectation</h5>
-        </div>
-        <h:form>
-            <div class="form-group">
-                <h:selectManyListbox value="#{group.contactsToAdd}" class="form-control">
-                    <f:selectItem itemValue="1" itemLabel="Un"/>
-                    <f:selectItem itemValue="2" itemLabel="Deux"/>
-                </h:selectManyListbox>
-
-            </div>
-            <h:commandButton value="Add" action="#{group.subscribe(2)}" styleClass="btn btn-primary"/>
-        </h:form>
-    </div>
-
-    <div class="container h-100" style="padding-top: 2%">
         <div class="row h-100 justify-content-center align-items-center">
             <table class="table table-hover">
                 <thead>
@@ -56,8 +40,8 @@
 
     <!-- Modal Infos -->
     <ui:repeat value="#{group.groups}" var="g">
-        <div class="modal fade bd-example-modal-lg" id="modal#{g.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
+        <div class="modal fade" id="modal#{g.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">
@@ -78,7 +62,6 @@
                                 <th scope="col">firstname</th>
                                 <th scope="col">lastname</th>
                                 <th scope="col">email</th>
-                                <th scope="col">delete</th>
 
                             </tr>
                             </thead>
@@ -89,7 +72,6 @@
                                     <td>#{c.firstName}</td>
                                     <td>#{c.lastName}</td>
                                     <td>#{c.email}</td>
-                                    <td><h:form><h:commandButton action="#{group.DeleteAffectation(c.id, g.id)}" value="X" styleClass="btn btn-danger btn-sm"/></h:form></td>
                                 </tr>
                             </ui:repeat>
                             </tbody>
@@ -102,7 +84,7 @@
                         </h:form>
 
                         <h:form>
-                            <h:commandButton value="Edit" action="error" styleClass="btn btn-primary"/>
+                            <h:commandButton value="Edit" action="#{group.Edit(g.id)}" styleClass="btn btn-primary"/>
                         </h:form>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>

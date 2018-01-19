@@ -9,13 +9,16 @@ import net.bootsfaces.C;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @ManagedBean(name = "group")
-@RequestScoped
+@SessionScoped
 public class GroupBean {
 
     private GroupServices g_s;
@@ -24,6 +27,7 @@ public class GroupBean {
 
     private ArrayList<String> contactsToAdd;
 
+    private int id;
     private String groupName;
 
     public GroupBean(){
@@ -36,6 +40,10 @@ public class GroupBean {
     public String getGroupName() { return groupName; }
 
     public void setGroupName(String groupName) { this.groupName = groupName; }
+
+    public int getGroupId() { return id; }
+
+    public void setGroupId(int id) { this.id = id; }
 
     public ArrayList<Group> getGroups() { return groups; }
 
@@ -78,14 +86,17 @@ public class GroupBean {
 
     public String DeleteAffectation(int refContact, int refGroup) {
         GroupServices g_s = new GroupServices();
+        System.out.println("refContact = [" + refContact + "], refGroup = [" + refGroup + "]");
         g_s.remove(refContact, refGroup);
-        return "GroupRead";
+        groups = g_s.getAll();
+        return "GroupAbout";
     }
 
     public String subscribe(int idGroup) {
         System.out.println("adding  " + contactsToAdd + " to idGroup = [" + idGroup + "]");
-        //new GroupServices().subscribe(contactsToAdd, idGroup);
-        return "error";
+        new GroupServices().subscribe(contactsToAdd, idGroup);
+        groups = g_s.getAll();
+        return "GroupEdit";
     }
 
 
@@ -97,4 +108,19 @@ public class GroupBean {
         return items;
     }
 
+    public String Edit(int idGroup) {
+        //List<Contact> contacts = new GroupServices().getContacts(idGroup);
+        Group g = new GroupServices().getGroup(idGroup);
+        this.groupName = g.getGroupName();
+        this.id = g.getId();
+        return "GroupEdit";
+    }
+
+
+    public String SubmitChanges() {
+        System.out.println("changing name to " + groupName + " for " + id);
+        new GroupServices().update(new Group(id, groupName));
+        groups = g_s.getAll();
+        return "GroupEdit";
+    }
 }

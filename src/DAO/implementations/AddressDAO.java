@@ -99,4 +99,25 @@ public class AddressDAO implements DAOLayer_ContactItems <Address> {
             }catch (Exception e){throw new RuntimeException(e);}
         }
     }
+
+
+    public void DeleteAddress(int idAddress) {
+        try {Class.forName("com.mysql.jdbc.Driver");
+        }catch (ClassNotFoundException e1) {e1.printStackTrace();}
+
+        // Request
+        try {
+            cx = DriverManager.getConnection(url, uid, passwd);
+            stmt = cx.prepareStatement("DELETE FROM addresses WHERE id = ?");
+            stmt.setObject (1, idAddress);
+            stmt.executeUpdate();
+        }
+        catch (SQLException e){throw new RuntimeException(e);
+        }finally{
+            try{
+                if (stmt != null) stmt.close();
+                if (cx != null) cx.close();
+            }catch (Exception e){throw new RuntimeException(e);}
+        }
+    }
 }

@@ -10,12 +10,12 @@ import Services.implementations.GroupServices;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import java.util.ArrayList;
 import java.util.List;
 
 @ManagedBean(name="contact")
-@RequestScoped
-
+@SessionScoped
 public class ContactBean {
 
     // Contact service
@@ -94,15 +94,13 @@ public class ContactBean {
         setFirstName(c.getFirstName());
         setLastName(c.getLastName());
         setEmail(c.getEmail());
-        setPhones(c.getPhones());
-        System.out.println("retrieved phone size " + c.getPhones().size());
-        setAddresses(c.getAddresses());
         return "ContactEdit";
     }
 
-    public String EditSubmit(){
-        System.out.println("editiing to " + firstName + "phone1 = " + phones.size());
-        return "ContactRead";
+    public String SubmitChanges(){
+        new ContactServices().update(new Contact(id, firstName, lastName, email, null, null));
+        contacts = c_s.getAll();
+        return "ContactAbout";
     }
 
     public String Delete (int id) {
